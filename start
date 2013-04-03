@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# vim: set ts=4 et sw=4 sts=4 fileencoding=utf-8 :
+#
+
+function usage(){
+        echo "Usage: ${0} start|stop|restart";
+}
+
+
+function start(){
+    echo 'texaspoker starting...'
+    date=`date +%Y-%m-%d`
+    nodemon app.js
+    echo 'start ok...'
+}
+
+function stop(){
+    echo 'texaspoker stoping...'
+    for i in `ps -ef | grep sass | grep -v 'grep' | grep -v 'start.sh' | awk '{print $2}'`; do
+      echo $i;
+      kill $i
+    done
+    for i in `ps -ef | grep node | grep -v 'grep' | grep -v 'start.sh' | awk '{print $2}'`; do
+      echo $i;
+      kill $i
+    done
+    echo 'stop ok...'
+}
+
+function restart(){
+    echo 'texaspoker restarting...'
+    stop
+    start
+}
+
+if test $# -eq 0; then
+        restart;
+        exit 0;
+fi;
+
+case $1 in
+        start)
+                start;
+                ;;
+        stop)
+                stop;
+                ;;
+        restart)
+                restart;
+                ;;
+        *)
+                usage;
+                ;;
+esac
