@@ -1,9 +1,6 @@
 define(function(require){
   require('highcharts');
   var Backbone = require('backbone');
- $.get('/table',function(data){
-    //console.log( JSON.stringify(data));
-  }); 
  $.get('/filter',function(data){
     var _data = [];
     _.each(data,function(count, type){

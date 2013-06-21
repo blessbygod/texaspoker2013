@@ -83,7 +83,8 @@ cfreader.load_json_config = function(name) {
     var result = cfreader.empty_config('json');
     try {
         if (utils.existsSync(name)) {
-            result = JSON.parse(fs.readFileSync(name));
+          var text = fs.readFileSync(name);
+          result = JSON.parse(text);
         }
     }
     catch (err) {

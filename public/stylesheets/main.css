@@ -1,6 +1,10 @@
 .f-left {
   float: left; }
 
+.top0 {
+  top: 0px !important;
+  overflow: hidden !important; }
+
 .spade {
   height: 164px;
   width: 118px;

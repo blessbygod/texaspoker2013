@@ -6,6 +6,7 @@ var _ = require('underscore');
 var uuid = require('node-uuid');
 var Table = require('../modules/Table.js').Table;
 var filter = require('../modules/filter.js').filter;
+var config = require('../config.js');
 
 /*
  * table 
@@ -47,3 +48,19 @@ exports.filter = function(req, res){
 
 };
 
+/*
+ * log analysis chart and ajax data table;
+ * */
+exports.log = function(req, res){
+  res.render('log', {
+     title: 'log analysis tools',
+     author: 'LiSen'
+  });
+};
+
+exports.config = function(req ,res){
+  var query = req.query;
+  var name = query.name || 'logger';
+  var type = query.type || 'json';
+  res.send(config.get(name, type) );
+};
