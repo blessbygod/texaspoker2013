@@ -1,0 +1,17 @@
+doctype 5
+html
+  head
+    title = title
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    <!-- Extjs 框架冲突，暂未解决 script(src="/javascripts/sea.js",data-config="/javascripts/_config",data-main="/javascripts/_main") -->
+    link(rel='stylesheet', href='/extjs/resources/css/ext-all.css')
+    script(src="/extjs/ext-all.js")
+    script(src="/extjs/example-data.js")
+    script(src="/extjs/app.js")
+  body
+    block content
+      header(style="height:70px;left:0;right:0;top:0px;position:absolute;border:2px solid silver;") #{author}
+      section(style="position:absolute;left:0;border:2px solid silver;right:0;left:0;bottom:0px;top:74px;",id="tp_body")
+         nav(style="width:20%;border:1px solid green;height:100%;",class="f-left",id="left-sidebar")
+         article(style="overflow:hidden; zoom:1",id="content")
+
