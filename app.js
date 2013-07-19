@@ -13,7 +13,7 @@ var app = express();
 app.configure(function(){
   var public_dir = path.join(__dirname, 'public'),
       static_dir = express.static( public_dir );
-  app.set('port', process.env.PORT || 8088);
+  app.set('port', process.env.PORT || 8080);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
