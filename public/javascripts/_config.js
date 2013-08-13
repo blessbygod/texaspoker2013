@@ -17,5 +17,6 @@ seajs.config({
       src: "thirdparty/highcharts.js",
       deps: ["jquery"]
     }
-  }
+  },
+  debug: 0
 });
