@@ -18,7 +18,7 @@ exports.info = function(req, res){
   res.render('main', {
         title: 'TexasPoker Online 2013',
         author:'senli',
-        pokers : _filter.pokers,
+        pokers : pokers,
         max_pokers : _filter.max_pokers
   });
 };

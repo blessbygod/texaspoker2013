@@ -22,19 +22,9 @@ var recursion_combine = function(arr, num) {
 
 //随即生成7张牌
 var filter = function(pokers){
-  //7选5的算法
- /* var suit_pokers = recursion_combine(pokers,5);
-  suit_pokers.sort(function(a,b){
-    return compare(a,b);
-  });
-  this.pokers = pokers;
-  var max = suit_pokers.length - 1;
-  this.max_pokers = suit_pokers[max];
-*/
   //直接七选五的算法
   this.pokers = pokers;
   this.max_pokers = fast_select_max(pokers);
-
 };
 
 exports.filter = filter;

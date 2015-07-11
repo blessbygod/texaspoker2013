@@ -16,6 +16,7 @@ html
         -});
         div(style="clear:both;")最大的一副牌:#{max_pokers.type}
         - max_pokers.forEach(function(poker,index){
+            - if(index > 4)return true;
           div(class="#{poker.suit} #{poker.suit}_#{poker.code} f-left")
         -});
 

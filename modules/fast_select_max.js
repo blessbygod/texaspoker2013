@@ -23,6 +23,7 @@ exports.fast_select_max = function(pokers){
   //对七张牌排序
   var poker_type = 0;//默认高牌
   var max_pokers = [];//最大的牌型
+  var pokers = _.clone(pokers);
   pokers.sort(function(a,b){
     return a.code > b.code;
   });
